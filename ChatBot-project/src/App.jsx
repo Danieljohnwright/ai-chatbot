@@ -5,6 +5,13 @@ import ChatInput from "./components/ChatInput";
 import ChatMessages from "./components/ChatMessages";
 
 export function App() {
+  const today = new Date();
+  const dynamicDate = today.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+
   const [chatMessages, setChatMessages] = useState([
     {
       message: "hello chatBot",
@@ -22,7 +29,7 @@ export function App() {
       id: "3",
     },
     {
-      message: "Today is November 2nd",
+      message: `Today is ${dynamicDate}`,
       sender: "robot",
       id: "4",
     },
